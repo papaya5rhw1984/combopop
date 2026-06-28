@@ -6,7 +6,7 @@ val keystoreProperties = Properties().apply { if (keystorePropertiesFile.exists(
 android {
     namespace = "com.ryu.combopop"
     compileSdk = 34
-    defaultConfig { applicationId = "io.github.papaya5rhw1984.combopop"; minSdk = 24; targetSdk = 34; versionCode = 3; versionName = "1.2" }
+    defaultConfig { applicationId = "io.github.papaya5rhw1984.combopop"; minSdk = 24; targetSdk = 34; versionCode = 4; versionName = "1.2.1" }
     signingConfigs { create("release") { if (keystorePropertiesFile.exists()) { storeFile = file(keystoreProperties["storeFile"] as String); storePassword = keystoreProperties["storePassword"] as String; keyAlias = keystoreProperties["keyAlias"] as String; keyPassword = keystoreProperties["keyPassword"] as String } } }
     buildTypes { release { isMinifyEnabled = false; if (keystorePropertiesFile.exists()) signingConfig = signingConfigs.getByName("release"); proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro") } }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
